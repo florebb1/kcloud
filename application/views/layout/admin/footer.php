@@ -1,0 +1,1 @@
+<div>Copyright(C) K-Cloud Administrator. All right reserved.</div>

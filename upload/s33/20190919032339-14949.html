@@ -1,0 +1,46 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+ 
+<div id="displayDiv"></div>
+ 
+<script id="template" type="text/x-handlebars-template">
+<table border="1" width="100%">
+    <thead> 
+        <th>번호</th> 
+        <th>제목</th> 
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조횟수</th> 
+    </thead> 
+    <tbody> 
+        {{#contents}} 
+        <tr> 
+            <td>{{num}}</td> 
+            <td>{{title}}</td> 
+            <td><a href="mailto:{{userEmail}}">{{userName}}</a></td>
+            <td>{{regDate}}</td>
+            <td>{{viewCount}}</td> 
+        </tr> 
+        {{/contents}} 
+    </tbody> 
+</table>
+</script>
+ 
+<script>
+//핸들바 템플릿 가져오기
+var source = $("#template").html(); 
+var template = Handlebars.compile(source);
+var data = {
+        contents : [
+            {num:1, title:"제목", userName:"홍길동", userEmail:"sample@daum.net", regDate:"20160303", viewCount:1},
+            {num:1, title:"제목", userName:"홍길동", userEmail:"sample@daum.net", regDate:"20160303", viewCount:1},
+            {num:1, title:"제목", userName:"홍길동", userEmail:"sample@daum.net", regDate:"20160303", viewCount:1},
+            {num:1, title:"제목", userName:"홍길동", userEmail:"sample@daum.net", regDate:"20160303", viewCount:1},
+            {num:1, title:"제목", userName:"홍길동", userEmail:"sample@daum.net", regDate:"20160303", viewCount:1},
+        ]
+};
+ 
+ 
+$("#displayDiv").html(template(data));
+ 
+</script>

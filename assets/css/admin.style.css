@@ -1,0 +1,428 @@
+/*!
+2019.07.04 kcloud admin & Laidback (David)
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean');
+@import url('/assets/css/bootstrap.min.css');
+
+/* #############################################################
+	general style
+############################################################# */
+
+html, body {
+    min-height:100%;
+    font-size:14px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+a {
+    color:#000000;
+    text-decoration:none;
+    cursor: pointer;
+}
+a:hover {
+    color:#666666;
+    text-decoration:none;
+}
+/* #############################################################
+	layout style
+############################################################# */
+
+.main-wrapper {
+    width: 100%;
+    min-width:1240px;
+    min-height:100%;
+    overflow: hidden;
+}
+.topbar {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:66px;
+    z-index: 50;
+    -webkit-box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
+    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
+}
+.left-side {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    width:220px;
+    padding-top:66px;
+    z-index: 49;
+    background: #fff;
+    -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+    height:100vh;
+    overflow-y:auto;
+}
+.page-wrapper{
+    background: #f5f8fa;
+    position: relative;
+    min-height:calc(100vh - 66px);
+    margin-top:66px;
+    margin-left:220px;
+    overflow: auto;
+}
+.main-content {
+    min-height:calc(100vh - 126px);
+    padding:20px;
+}
+.content-wrap {
+	min-height:600px;
+	background-color:#ffffff;
+	border-radius:5px;
+	padding:15px;
+}
+.footer {
+    width: 100%;
+    overflow: hidden;
+    height:60px;
+    padding:20px;
+    font-size:12px;
+}
+
+/* #############################################################
+	header & left sidebar style
+############################################################# */
+
+.top-navbar {
+    line-height:60px;
+}
+.top-navbar > a, .top-navbar > a:hover {
+    color:#ffffff;
+    text-decoration:none;
+}
+.top-navbar > a > span {
+    font-size:22px;
+    font-weight:900;
+    display: inline-block;
+    margin-right:10px;
+}
+.top-userbar {
+    line-height:60px;
+}
+.top-userbar > a, .top-userbar > a:hover {
+    color:#ffffff;
+    text-decoration:none;
+}
+.top-userbar > a > img {
+    width:20px;
+    height:20px;
+}
+.sidebar-nav a:hover {
+    text-decoration:none;
+}
+.sidebar-nav .btn-link.focus,.sidebar-nav .btn-link:focus {
+    text-decoration: none;
+    box-shadow: none;
+}
+.sidebar-nav {
+    padding-top:10px;
+    margin-bottom:50px;
+}
+.sidebar-nav > a {
+    text-align: left;
+    padding:15px 20px;
+    font-size:13px;
+    color:#54667a;
+    position: relative;
+}
+.sidebar-nav > div {
+    background: rgba(0, 0, 0, 0.02);
+}
+.sidebar-nav > div > a {
+    text-align: left;
+    padding:13px 0 13px 47px;
+    font-size:12px;
+    color:#778799;
+}
+.sidebar-nav > div > a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+.sidebar-nav > div > a.active {
+    background: rgba(0, 0, 0, 0.05);
+    color:#007bff;
+}
+.sidebar-nav a > img {
+    width:16px;
+    height:16px;
+    display: inline-block;
+    margin-right:10px;
+}
+.sidebar-nav .btn-block+.btn-block {
+    margin-top:0;
+}
+.sidebar-nav > .btn-link:after {
+    position: absolute;
+    top:16px;
+    right:15px;
+    width:17px;
+    height:17px;
+    background:url('/assets/images/right-arrow.png');
+    background-size:11px 11px;
+    background-repeat: no-repeat;
+    background-position:center center;
+    content: "";
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block;
+}
+.sidebar-nav > .collapsed:after {
+    position: absolute;
+    top:16px;
+    right:15px;
+    width:17px;
+    height:17px;
+    background:url('/assets/images/right-arrow.png');
+    background-size:11px 11px;
+    background-repeat: no-repeat;
+    background-position:center center;
+    content: "";
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    display: inline-block;
+}
+.sidebar-nav > .first-link:after {
+    position: absolute;
+    top:16px;
+    right:15px;
+    width:0px !important;
+    height:0px !important;
+    background:none !important;
+    background-size:0px;
+    background-repeat: no-repeat;
+    background-position:center center;
+    content: "";
+    display: inline-block;
+}
+
+/* #############################################################
+	background-color style
+############################################################# */
+
+.white {
+    background: #ffffff;
+}
+.wgray {
+    background:rgba(0,0,0,0.05);
+}
+.sky-blue {
+    background: #009efb;
+    background: -moz-linear-gradient(left, #0178bc 0%, #00bdda 100%);
+    background: -webkit-linear-gradient(left, #0178bc 0%, #00bdda 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#0178bc), to(#00bdda));
+    background: -o-linear-gradient(left, #0178bc 0%, #00bdda 100%);
+    background: linear-gradient(to right, #0178bc 0%, #00bdda 100%);
+}
+
+/* #############################################################
+	content style
+############################################################# */
+
+.dashboard-wrap h1 i {font-size:4.8rem;color:#4d9ec4;margin-top:1rem;margin-bottom:1rem;}
+
+
+.page-item > .page-link {
+	color:#000000;
+	font-size:14px;
+	padding:0 !important;
+	width:36px;
+	height:36px;
+	line-height:32px;
+	text-align:center;
+	margin:0 2px;
+}
+.page-item:first-child > .page-link, .page-item:last-child > .page-link  {
+	color:#000000;
+	font-size:24px;
+	font-weight:900;
+	padding:0 !important;
+	width:36px;
+	height:36px;
+	line-height:36px;
+	text-align:center;
+}
+.page-item:first-child > .page-link {
+	margin:0 2px 0 0;
+}
+
+.page-item:last-child > .page-link {
+	margin:0 0 0 2px;
+}
+
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding:0 0 0 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color:transparent;
+    border-radius:0rem;
+    font-size:12px;
+}
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #272c2f;
+    border-color: #272c2f;
+}
+
+/* #############################################################
+	board style
+############################################################# */
+
+.bbs-none {
+	min-height:260px;
+}
+.border {
+    border: 1px solid #cccccc !important;
+}
+.min-width120 {
+	min-width:120px;
+}
+.table {
+	border-left:5px solid #dee2e6;
+	border-right:5px solid #dee2e6;
+	border-top:1px solid #dee2e6;
+	border-bottom:1px solid #dee2e6;
+	background: #ffffff;
+	font-size:14px;
+
+}
+.table thead th {
+	background-color:#efefef;
+}
+.ellipsis {
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  word-wrap:normal;
+  width:420px;
+  overflow:hidden;
+}
+.ellipsis-multi {
+  width:400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap:break-word; 
+  line-height: 1.2em;
+  height: 3.55em; /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
+}
+.ellipsis-multi2 {
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap:break-word; 
+  line-height: 1.2em;
+  height: 3.55em; /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
+}
+
+/* #############################################################
+	form style
+############################################################# */
+
+.contentview {font-size:16px;line-height:200%;}
+.contentview .t_center{text-align:center !important;;}
+.contentview .t_right{text-align:right !important;;}
+.contentview .t_left{text-align:left !important;}
+
+.contentview h1{font-size:28px; font-weight:600; margin-bottom:15px; line-height:32px; }
+.contentview h1 span{font-size:15px; }
+.contentview h2{font-size:24px; font-weight:600; margin-bottom:15px; line-height:30px; }
+.contentview h3{font-weight:600; margin-bottom:10px; }
+.contentview .red{color:#bf3838;}
+.contentview h4.red{font-weight:600; font-size:17px;}
+.contentview  b{font-weight:600; }
+.contentview .box{background:#e7f4f8; padding:15px; margin-bottom:20px; }
+.contentview .box2{border:2px solid #005fa4; border-radius:5px; padding:20px; margin-bottom:20px; }
+.contentview .box2 table{font-size:14px; line-height:19px; }
+.contentview .box2 h3.ex{background:#005fa4; color:#fff; padding:5px 15px; display:inline-block;}
+.contentview ul li{padding-bottom:0px; }
+.contentview ul ul li, .contentview ul ul ul li{padding:0px; }
+.contentview ul.basic > li{list-style:url('/img/list-basic.png'); margin-left:20px; padding-left:0px;}
+.contentview ul.basic2 > li{list-style:circle; margin-left: 20px;}
+.contentview ul.number > li{list-style:decimal-leading-zero; margin-left:30px; }
+.contentview ul.none > li{list-style:none; }
+.contentview .border-top-0 {border-top:0;}
+.contentview .table1{border-top:1px solid #222; width:100%;}
+.contentview .table1 th{padding:10px 5px; line-height:22px; background:#f8f8f8; border-bottom:1px solid #d9d9d9; border-left:1px solid #d9d9d9;}
+.contentview .table1 .border_none{border-left:none;}
+.contentview .table1 td{border-left:1px solid #d9d9d9; padding:10px 5px; border-bottom:1px solid #d9d9d9; }
+.contentview .table2{border-top:1px solid #222; width:100%; font-size:14px; }
+.contentview .table2 th{padding:10px 5px; line-height:21px; background:#f8f8f8; border-bottom:1px solid #d9d9d9; border-left:1px solid #d9d9d9;}
+.contentview .table2 .border_none{border-left:none;}
+.contentview .table2 td{border-left:1px solid #d9d9d9;  background:#fff; line-height:21px; padding:10px 5px; text-align:center; border-bottom:1px solid #d9d9d9; }
+.contentview .table2 textarea{height:150px !important;}
+.contentview .table2 input{width:100% !important;}
+.contentview .table2 .img img{width:200px !important;}
+
+.table-i i {
+	font-size:22px;
+	font-weight:900;
+	vertical-align: middle;
+	margin-left:3px;
+}
+.bd-callout {
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+    font-size:18px;
+    font-weight:500;
+}
+.bd-callout-info {
+    border-left-color: #5bc0de;
+    background-color:#ffffff;
+}
+.member-search-none {
+	height:150px;
+	vertical-align:middle !important;
+	text-align:center;
+}
+.mgtbtn {
+	background-color:#ffffff;
+	color:#000000;
+}
+.pagination > li {
+    color:#000000;
+    font-size:14px;
+    padding:0 !important;
+    width:36px;
+    height:36px;
+    line-height:32px;
+    text-align:center;
+    margin:0 2px;
+    border: 1px solid #ddd;
+}
+.pagination > li.active{
+    color:#fff !important;
+    font-size:14px;
+    padding:0 !important;
+    width:36px;
+    height:36px;
+    line-height:32px;
+    text-align:center;
+    margin:0 2px;
+    background-color: #0098c9;
+}
+td, th {
+    vertical-align: middle !important;
+}
+.min-w-max {
+    min-width: max-content;
+}
